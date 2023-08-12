@@ -212,6 +212,7 @@ function FileTreeListItem({
       aria-level={depth}
       aria-setsize={parent?.files.length || 1}
       aria-posinset={index + 1}
+      aria-selected={pathFocused}
       aria-expanded={FileTree.directoryIsExpanded(fileTree, path)}
       key={itemName(item)}
     >
