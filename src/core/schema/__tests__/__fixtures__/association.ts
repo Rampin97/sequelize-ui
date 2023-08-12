@@ -41,6 +41,7 @@ export const baseAssociation: Omit<Association, 'type'> = {
   foreignKey: null,
   sourceModelId: uniqueId(),
   targetModelId: uniqueId(),
+  allowNull: null,
 }
 
 export const belongsTo: Association<BelongsToAssociation> = {

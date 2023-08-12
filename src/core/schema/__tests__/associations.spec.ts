@@ -176,6 +176,7 @@ describe('schema dataTypes', () => {
       sourceModelId: 'a',
       targetModelId: 'b',
       type: belongsToType(),
+      allowNull: null,
     }
 
     const aHasManyB: Association<HasManyAssociation> = {
@@ -185,6 +186,7 @@ describe('schema dataTypes', () => {
       sourceModelId: 'a',
       targetModelId: 'b',
       type: hasManyType(),
+      allowNull: null,
     }
 
     const aHasOneB: Association<HasOneAssociation> = {
@@ -194,6 +196,7 @@ describe('schema dataTypes', () => {
       sourceModelId: 'a',
       targetModelId: 'b',
       type: hasOneType(),
+      allowNull: null,
     }
 
     const bBelongsToA: Association<BelongsToAssociation> = {
@@ -203,6 +206,7 @@ describe('schema dataTypes', () => {
       sourceModelId: 'b',
       targetModelId: 'a',
       type: belongsToType(),
+      allowNull: null,
     }
 
     const bHasManyA: Association<HasManyAssociation> = {
@@ -212,6 +216,7 @@ describe('schema dataTypes', () => {
       sourceModelId: 'b',
       targetModelId: 'a',
       type: hasManyType(),
+      allowNull: null,
     }
 
     const bHasOneA: Association<HasManyAssociation> = {
@@ -221,6 +226,7 @@ describe('schema dataTypes', () => {
       sourceModelId: 'b',
       targetModelId: 'a',
       type: hasManyType(),
+      allowNull: null,
     }
 
     const aBelongsToC: Association<BelongsToAssociation> = {
@@ -230,6 +236,7 @@ describe('schema dataTypes', () => {
       sourceModelId: 'a',
       targetModelId: 'c',
       type: belongsToType(),
+      allowNull: null,
     }
 
     const aManyToManyB: Association<ManyToManyAssociation> = {
@@ -239,6 +246,7 @@ describe('schema dataTypes', () => {
       sourceModelId: 'a',
       targetModelId: 'b',
       type: manyToManyTableType('foo'),
+      allowNull: null,
     }
 
     const bManyToManyA: Association<ManyToManyAssociation> = {
@@ -248,6 +256,7 @@ describe('schema dataTypes', () => {
       sourceModelId: 'b',
       targetModelId: 'a',
       type: manyToManyTableType('bar'),
+      allowNull: null,
     }
 
     const commonAssociations = [aBelongsToC, aManyToManyB, bManyToManyA]
