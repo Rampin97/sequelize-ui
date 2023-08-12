@@ -91,6 +91,7 @@ const actor: Model = {
       sourceModelId: Id.Actor,
       targetModelId: Id.Film,
       type: manyToManyModelType(Id.FilmActor, 'film_id'),
+      allowNull: false,
     },
   ],
 }
@@ -194,6 +195,7 @@ const film: Model = {
       type: belongsToType(),
       sourceModelId: Id.Film,
       targetModelId: Id.Language,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -202,6 +204,7 @@ const film: Model = {
       type: belongsToType(),
       sourceModelId: Id.Film,
       targetModelId: Id.Language,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -210,6 +213,7 @@ const film: Model = {
       type: hasManyType(),
       sourceModelId: Id.Film,
       targetModelId: Id.Inventory,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -218,6 +222,7 @@ const film: Model = {
       sourceModelId: Id.Film,
       targetModelId: Id.Actor,
       type: manyToManyModelType(Id.FilmActor, 'actor_id'),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -226,6 +231,7 @@ const film: Model = {
       sourceModelId: Id.Film,
       targetModelId: Id.Category,
       type: manyToManyModelType(Id.FilmCategory, 'category_id'),
+      allowNull: false,
     },
   ],
 }
@@ -253,6 +259,7 @@ const language: Model = {
       type: hasManyType(),
       sourceModelId: Id.Language,
       targetModelId: Id.Film,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -261,6 +268,7 @@ const language: Model = {
       type: hasManyType(),
       sourceModelId: Id.Language,
       targetModelId: Id.Film,
+      allowNull: false,
     },
   ],
 }
@@ -288,6 +296,7 @@ const category: Model = {
       sourceModelId: Id.Category,
       targetModelId: Id.Film,
       type: manyToManyModelType(Id.FilmCategory, 'film_id'),
+      allowNull: false,
     },
   ],
 }
@@ -306,6 +315,7 @@ const inventory: Model = {
       type: belongsToType(),
       sourceModelId: Id.Inventory,
       targetModelId: Id.Film,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -314,6 +324,7 @@ const inventory: Model = {
       type: belongsToType(),
       sourceModelId: Id.Inventory,
       targetModelId: Id.Store,
+      allowNull: false,
     },
   ],
 }
@@ -332,6 +343,7 @@ const store: Model = {
       type: hasManyType(),
       sourceModelId: Id.Store,
       targetModelId: Id.Inventory,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -340,6 +352,7 @@ const store: Model = {
       type: hasManyType(),
       sourceModelId: Id.Store,
       targetModelId: Id.Staff,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -348,6 +361,7 @@ const store: Model = {
       type: hasManyType(),
       sourceModelId: Id.Store,
       targetModelId: Id.Customer,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -356,6 +370,7 @@ const store: Model = {
       type: belongsToType(),
       sourceModelId: Id.Store,
       targetModelId: Id.Staff,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -364,6 +379,7 @@ const store: Model = {
       type: belongsToType(),
       sourceModelId: Id.Store,
       targetModelId: Id.Address,
+      allowNull: false,
     },
   ],
 }
@@ -439,6 +455,7 @@ const staff: Model = {
       type: belongsToType(),
       targetModelId: Id.Store,
       sourceModelId: Id.Staff,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -447,6 +464,7 @@ const staff: Model = {
       type: hasManyType(),
       targetModelId: Id.Store,
       sourceModelId: Id.Staff,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -455,6 +473,7 @@ const staff: Model = {
       type: belongsToType(),
       targetModelId: Id.Address,
       sourceModelId: Id.Staff,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -463,6 +482,7 @@ const staff: Model = {
       type: hasManyType(),
       targetModelId: Id.Rental,
       sourceModelId: Id.Staff,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -471,6 +491,7 @@ const staff: Model = {
       type: hasManyType(),
       targetModelId: Id.Payment,
       sourceModelId: Id.Staff,
+      allowNull: false,
     },
   ],
 }
@@ -522,6 +543,7 @@ const customer: Model = {
       type: belongsToType(),
       targetModelId: Id.Store,
       sourceModelId: Id.Customer,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -530,6 +552,7 @@ const customer: Model = {
       type: belongsToType(),
       targetModelId: Id.Address,
       sourceModelId: Id.Customer,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -538,6 +561,7 @@ const customer: Model = {
       type: hasManyType(),
       targetModelId: Id.Rental,
       sourceModelId: Id.Customer,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -546,6 +570,7 @@ const customer: Model = {
       type: hasManyType(),
       targetModelId: Id.Payment,
       sourceModelId: Id.Customer,
+      allowNull: false,
     },
   ],
 }
@@ -597,6 +622,7 @@ const address: Model = {
       type: belongsToType(),
       targetModelId: Id.City,
       sourceModelId: Id.Address,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -605,6 +631,7 @@ const address: Model = {
       type: hasOneType(),
       targetModelId: Id.Customer,
       sourceModelId: Id.Address,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -613,6 +640,7 @@ const address: Model = {
       type: hasOneType(),
       targetModelId: Id.Staff,
       sourceModelId: Id.Address,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -621,6 +649,7 @@ const address: Model = {
       type: hasOneType(),
       targetModelId: Id.Store,
       sourceModelId: Id.Address,
+      allowNull: false,
     },
   ],
 }
@@ -656,6 +685,7 @@ const rental: Model = {
       type: belongsToType(),
       targetModelId: Id.Inventory,
       sourceModelId: Id.Rental,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -664,6 +694,7 @@ const rental: Model = {
       type: belongsToType(),
       targetModelId: Id.Customer,
       sourceModelId: Id.Rental,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -672,6 +703,7 @@ const rental: Model = {
       type: belongsToType(),
       targetModelId: Id.Staff,
       sourceModelId: Id.Rental,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -680,6 +712,7 @@ const rental: Model = {
       type: hasManyType(),
       targetModelId: Id.Payment,
       sourceModelId: Id.Rental,
+      allowNull: false,
     },
   ],
 }
@@ -715,6 +748,7 @@ const payment: Model = {
       type: belongsToType(),
       targetModelId: Id.Customer,
       sourceModelId: Id.Payment,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -723,6 +757,7 @@ const payment: Model = {
       type: belongsToType(),
       targetModelId: Id.Staff,
       sourceModelId: Id.Payment,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -731,6 +766,7 @@ const payment: Model = {
       type: belongsToType(),
       targetModelId: Id.Rental,
       sourceModelId: Id.Payment,
+      allowNull: false,
     },
   ],
 }
@@ -758,6 +794,7 @@ const city: Model = {
       type: belongsToType(),
       targetModelId: Id.Country,
       sourceModelId: Id.City,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -766,6 +803,7 @@ const city: Model = {
       type: hasManyType(),
       targetModelId: Id.Address,
       sourceModelId: Id.City,
+      allowNull: false,
     },
   ],
 }
@@ -793,6 +831,7 @@ const country: Model = {
       type: hasManyType(),
       targetModelId: Id.City,
       sourceModelId: Id.Country,
+      allowNull: false,
     },
   ],
 }
@@ -811,6 +850,7 @@ const film_actor: Model = {
       type: belongsToType(),
       sourceModelId: Id.FilmActor,
       targetModelId: Id.Film,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -819,6 +859,7 @@ const film_actor: Model = {
       type: belongsToType(),
       sourceModelId: Id.FilmActor,
       targetModelId: Id.Actor,
+      allowNull: false,
     },
   ],
 }
@@ -837,6 +878,7 @@ const film_category: Model = {
       type: belongsToType(),
       sourceModelId: Id.FilmCategory,
       targetModelId: Id.Film,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -845,6 +887,7 @@ const film_category: Model = {
       type: belongsToType(),
       sourceModelId: Id.FilmCategory,
       targetModelId: Id.Category,
+      allowNull: false,
     },
   ],
 }

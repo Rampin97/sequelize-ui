@@ -8,6 +8,7 @@ export interface Association {
   targetModelId: string
   type: AssociationType
   alias?: string | null
+  allowNull?: boolean | null
   foreignKey?: string | null
 }
 

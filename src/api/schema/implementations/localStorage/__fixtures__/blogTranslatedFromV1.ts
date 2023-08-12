@@ -109,6 +109,7 @@ const category: Model = {
       targetModelId: Id.Category,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: '7lc6O2PM91',
@@ -117,6 +118,7 @@ const category: Model = {
       targetModelId: Id.Category,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'wcfc-hVPMo',
@@ -125,6 +127,7 @@ const category: Model = {
       targetModelId: Id.PostCategory,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'hN7l0LA6k5l',
@@ -133,6 +136,7 @@ const category: Model = {
       targetModelId: Id.Post,
       type: manyToManyModelType(Id.PostCategory),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -217,6 +221,7 @@ const post: Model = {
       targetModelId: Id.User,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'XHnda0nh3I8',
@@ -225,6 +230,7 @@ const post: Model = {
       targetModelId: Id.Post,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'uokEC1_-88B',
@@ -233,6 +239,7 @@ const post: Model = {
       targetModelId: Id.Post,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'nZBcsVQMiVe',
@@ -241,6 +248,7 @@ const post: Model = {
       targetModelId: Id.PostCategory,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'GTvEzMsP-CY',
@@ -249,6 +257,7 @@ const post: Model = {
       targetModelId: Id.Category,
       type: manyToManyModelType(Id.PostCategory),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'nMAVYlaMC77',
@@ -257,6 +266,7 @@ const post: Model = {
       targetModelId: Id.PostComment,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'MXFKBquNNI6',
@@ -265,6 +275,7 @@ const post: Model = {
       targetModelId: Id.PostMeta,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'UV43MPRd0Lt',
@@ -273,6 +284,7 @@ const post: Model = {
       targetModelId: Id.PostTag,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'skZFJbJB6hh',
@@ -281,6 +293,7 @@ const post: Model = {
       targetModelId: Id.Tag,
       type: manyToManyModelType(Id.PostTag),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -316,6 +329,7 @@ const postCategory: Model = {
       targetModelId: Id.Post,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'YN5x8WTSUv0',
@@ -324,6 +338,7 @@ const postCategory: Model = {
       targetModelId: Id.Category,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -383,6 +398,7 @@ const postComment: Model = {
       targetModelId: Id.Post,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: '57xLCZkr22k',
@@ -391,6 +407,7 @@ const postComment: Model = {
       targetModelId: Id.PostComment,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'XZuWMYVjX9q',
@@ -399,6 +416,7 @@ const postComment: Model = {
       targetModelId: Id.PostComment,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -442,6 +460,7 @@ const postMeta: Model = {
       targetModelId: Id.Post,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -477,6 +496,7 @@ const postTag: Model = {
       targetModelId: Id.Post,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'xCR4XtTuYjT',
@@ -485,6 +505,7 @@ const postTag: Model = {
       targetModelId: Id.Tag,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -544,6 +565,7 @@ const tag: Model = {
       targetModelId: Id.PostTag,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: 'zUJ6zJEZ_TB',
@@ -552,6 +574,7 @@ const tag: Model = {
       targetModelId: Id.Post,
       type: manyToManyModelType(Id.PostTag),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -659,6 +682,7 @@ const user: Model = {
       targetModelId: Id.Post,
       type: hasManyType(),
       foreignKey: 'author id',
+      allowNull: false,
     },
   ],
 }

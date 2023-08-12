@@ -108,6 +108,7 @@ const employee: Model = {
       type: hasManyType(),
       sourceModelId: Id.Employees,
       targetModelId: Id.Salaries,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -116,6 +117,7 @@ const employee: Model = {
       type: hasManyType(),
       sourceModelId: Id.Employees,
       targetModelId: Id.Titles,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -124,6 +126,7 @@ const employee: Model = {
       sourceModelId: Id.Employees,
       targetModelId: Id.Departments,
       type: manyToManyModelType(Id.DepartmentEmployees, 'dept_no'),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -132,6 +135,7 @@ const employee: Model = {
       sourceModelId: Id.Employees,
       targetModelId: Id.Departments,
       type: manyToManyModelType(Id.DepartmentManagers, 'dept_no'),
+      allowNull: false,
     },
   ],
 }
@@ -167,6 +171,7 @@ const department: Model = {
       sourceModelId: Id.Departments,
       targetModelId: Id.Employees,
       type: manyToManyModelType(Id.DepartmentEmployees),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -175,6 +180,7 @@ const department: Model = {
       sourceModelId: Id.Departments,
       targetModelId: Id.Employees,
       type: manyToManyModelType(Id.DepartmentManagers),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -183,6 +189,7 @@ const department: Model = {
       type: hasManyType(),
       sourceModelId: Id.Departments,
       targetModelId: Id.DepartmentEmployees,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -191,6 +198,7 @@ const department: Model = {
       type: hasManyType(),
       sourceModelId: Id.Departments,
       targetModelId: Id.DepartmentManagers,
+      allowNull: false,
     },
   ],
 }
@@ -242,6 +250,7 @@ const departmentEmployee: Model = {
       type: belongsToType(),
       sourceModelId: Id.DepartmentEmployees,
       targetModelId: Id.Employees,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -250,6 +259,7 @@ const departmentEmployee: Model = {
       type: belongsToType(),
       sourceModelId: Id.DepartmentEmployees,
       targetModelId: Id.Departments,
+      allowNull: false,
     },
   ],
 }
@@ -301,6 +311,7 @@ const departmentManager: Model = {
       type: belongsToType(),
       sourceModelId: Id.DepartmentManagers,
       targetModelId: Id.Employees,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -309,6 +320,7 @@ const departmentManager: Model = {
       type: belongsToType(),
       sourceModelId: Id.DepartmentManagers,
       targetModelId: Id.Departments,
+      allowNull: false,
     },
   ],
 }
@@ -360,6 +372,7 @@ const title: Model = {
       type: belongsToType(),
       sourceModelId: Id.Titles,
       targetModelId: Id.Employees,
+      allowNull: false,
     },
   ],
 }
@@ -411,6 +424,7 @@ const salary: Model = {
       type: belongsToType(),
       sourceModelId: Id.Salaries,
       targetModelId: Id.Employees,
+      allowNull: false,
     },
   ],
 }

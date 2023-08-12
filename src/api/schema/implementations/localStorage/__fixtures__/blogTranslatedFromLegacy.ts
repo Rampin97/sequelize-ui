@@ -44,6 +44,7 @@ export const blogTranslatedFromLegacy: Schema = {
           targetModelId: '55dded8d-6b6a-401f-a799-d10ce03296e9',
           alias: 'Author',
           foreignKey: null,
+          allowNull: false,
         },
         {
           id: '7bd0f700-bf8d-4fa6-bab2-338c0d6f3969',
@@ -52,6 +53,7 @@ export const blogTranslatedFromLegacy: Schema = {
           targetModelId: 'f38d213b-3317-402a-9702-7d37c1cc03cb',
           alias: null,
           foreignKey: null,
+          allowNull: false,
         },
         {
           id: '6b8ee99f-eac3-48bc-90e9-db5da71de988',
@@ -64,6 +66,7 @@ export const blogTranslatedFromLegacy: Schema = {
           targetModelId: '8c934d50-a8aa-4ea5-bf99-e3f5de6d6af5',
           alias: null,
           foreignKey: null,
+          allowNull: false,
         },
       ],
       createdAt: now(),
@@ -106,6 +109,7 @@ export const blogTranslatedFromLegacy: Schema = {
           targetModelId: 'e656d286-e249-4844-ab0a-f4bb6ae8c44f',
           alias: null,
           foreignKey: 'author id',
+          allowNull: false,
         },
         {
           id: '7241057f-cbd8-45bc-a766-857dded9ec48',
@@ -114,6 +118,7 @@ export const blogTranslatedFromLegacy: Schema = {
           targetModelId: 'f38d213b-3317-402a-9702-7d37c1cc03cb',
           alias: null,
           foreignKey: 'author id',
+          allowNull: false,
         },
       ],
       createdAt: now(),
@@ -144,6 +149,7 @@ export const blogTranslatedFromLegacy: Schema = {
           targetModelId: 'e656d286-e249-4844-ab0a-f4bb6ae8c44f',
           alias: null,
           foreignKey: null,
+          allowNull: false,
         },
       ],
       createdAt: now(),
@@ -170,6 +176,7 @@ export const blogTranslatedFromLegacy: Schema = {
           targetModelId: '55dded8d-6b6a-401f-a799-d10ce03296e9',
           alias: 'Author',
           foreignKey: null,
+          allowNull: false,
         },
         {
           id: '36a00526-bc28-4553-b0db-b12428bf70bf',
@@ -178,6 +185,7 @@ export const blogTranslatedFromLegacy: Schema = {
           targetModelId: 'e656d286-e249-4844-ab0a-f4bb6ae8c44f',
           alias: null,
           foreignKey: null,
+          allowNull: false,
         },
         {
           id: '209d5e91-7d2b-4d71-9756-3934e7349d02',
@@ -186,6 +194,7 @@ export const blogTranslatedFromLegacy: Schema = {
           targetModelId: 'f38d213b-3317-402a-9702-7d37c1cc03cb',
           alias: 'Parent',
           foreignKey: null,
+          allowNull: false,
         },
         {
           id: '61f32047-c929-4472-a6ea-2c8e5f1085b9',
@@ -194,6 +203,7 @@ export const blogTranslatedFromLegacy: Schema = {
           targetModelId: 'f38d213b-3317-402a-9702-7d37c1cc03cb',
           alias: 'Response',
           foreignKey: 'parent id',
+          allowNull: false,
         },
       ],
       createdAt: now(),

@@ -259,6 +259,7 @@ function getJoinTableModel(
     sourceModelId: id,
     targetModelId: source.id,
     type: belongsToType(),
+    allowNull: null,
   }
 
   const targetFk = getForeignKey({ model: target, association, modelById, dbOptions })
@@ -272,6 +273,7 @@ function getJoinTableModel(
     sourceModelId: id,
     targetModelId: target.id,
     type: belongsToType(),
+    allowNull: null,
   }
 
   return {

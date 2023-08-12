@@ -7,6 +7,7 @@ export type Association<T extends AssociationType = AssociationType> = {
   targetModelId: string
   foreignKey: string | null
   alias: string | null
+  allowNull: boolean | null
 }
 
 export enum AssociationTypeType {

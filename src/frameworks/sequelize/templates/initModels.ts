@@ -221,7 +221,14 @@ function foreignKeyField({
     modelById,
     dbOptions,
   })
-  return `foreignKey: '${foreignKey}'`
+  return lines([
+    'foreignKey: {',
+    lines([`allowNull: ${association.allowNull ?? true}`, `name: '${foreignKey}'`], {
+      depth: 2,
+      separator: ',',
+    }),
+    '}',
+  ])
 }
 
 function otherKeyField({

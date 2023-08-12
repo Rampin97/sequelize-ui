@@ -16,6 +16,7 @@ import {
 import { AssociationErrors } from '@src/core/validation/schema'
 import Radio from '@src/ui/components/form/Radio'
 import Select from '@src/ui/components/form/Select'
+import Checkbox from '@src/ui/components/form/Checkbox'
 import TextInput from '@src/ui/components/form/TextInput'
 import { classnames, gridColumn, height, inset, padding, position } from '@src/ui/styles/classnames'
 import { fieldsetGrid } from '@src/ui/styles/utils'
@@ -103,6 +104,11 @@ function AssociationFieldset({
 
   const handleChangeForeignKey = React.useCallback(
     (foreignKey?: string) => handleChange({ foreignKey: foreignKey || undefined }),
+    [handleChange],
+  )
+
+  const handleChangeAllowNull = React.useCallback(
+    (allowNull?: boolean) => handleChange({ allowNull: allowNull }),
     [handleChange],
   )
 
@@ -195,6 +201,14 @@ function AssociationFieldset({
         error={errors?.foreignKey}
         onChange={handleChangeForeignKey}
       />
+      <div className={classnames(gridColumn('col-span-12'))}>
+        <Checkbox
+          id={`association-fk-${association.id}`}
+          label="Allow NULL"
+          checked={association.allowNull ?? true}
+          onChange={handleChangeAllowNull}
+        />
+      </div>
       {!isManytoMany(association) && <div className={classnames(height('h-30'))} />}
       {isManytoMany(association) && schema.models.length > 0 && (
         <>

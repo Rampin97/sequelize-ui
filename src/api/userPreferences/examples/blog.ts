@@ -103,6 +103,7 @@ const category: Model = {
       targetModelId: Id.Category,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -111,6 +112,7 @@ const category: Model = {
       targetModelId: Id.Category,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -119,6 +121,7 @@ const category: Model = {
       targetModelId: Id.PostCategory,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -127,6 +130,7 @@ const category: Model = {
       targetModelId: Id.Post,
       type: manyToManyModelType(Id.PostCategory),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -202,6 +206,7 @@ const post: Model = {
       targetModelId: Id.User,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -210,6 +215,7 @@ const post: Model = {
       targetModelId: Id.Post,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -218,6 +224,7 @@ const post: Model = {
       targetModelId: Id.Post,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -226,6 +233,7 @@ const post: Model = {
       targetModelId: Id.PostCategory,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -234,6 +242,7 @@ const post: Model = {
       targetModelId: Id.Category,
       type: manyToManyModelType(Id.PostCategory),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -242,6 +251,7 @@ const post: Model = {
       targetModelId: Id.PostComment,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -250,6 +260,7 @@ const post: Model = {
       targetModelId: Id.PostMeta,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -258,6 +269,7 @@ const post: Model = {
       targetModelId: Id.PostTag,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -266,6 +278,7 @@ const post: Model = {
       targetModelId: Id.Tag,
       type: manyToManyModelType(Id.PostTag),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -293,6 +306,7 @@ const postCategory: Model = {
       targetModelId: Id.Post,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -301,6 +315,7 @@ const postCategory: Model = {
       targetModelId: Id.Category,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -352,6 +367,7 @@ const postComment: Model = {
       targetModelId: Id.Post,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -360,6 +376,7 @@ const postComment: Model = {
       targetModelId: Id.PostComment,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -368,6 +385,7 @@ const postComment: Model = {
       targetModelId: Id.PostComment,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -403,6 +421,7 @@ const postMeta: Model = {
       targetModelId: Id.Post,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -430,6 +449,7 @@ const postTag: Model = {
       targetModelId: Id.Post,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -438,6 +458,7 @@ const postTag: Model = {
       targetModelId: Id.Tag,
       type: belongsToType(),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -489,6 +510,7 @@ const tag: Model = {
       targetModelId: Id.PostTag,
       type: hasManyType(),
       foreignKey: null,
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -497,6 +519,7 @@ const tag: Model = {
       targetModelId: Id.Post,
       type: manyToManyModelType(Id.PostTag),
       foreignKey: null,
+      allowNull: false,
     },
   ],
 }
@@ -596,6 +619,7 @@ const user: Model = {
       targetModelId: Id.Post,
       type: hasManyType(),
       foreignKey: 'author id',
+      allowNull: false,
     },
   ],
 }

@@ -49,7 +49,8 @@
       },
       "optionalProperties": {
         "alias": { "nullable": true, "type": "string" },
-        "foreignKey": { "nullable": true, "type": "string" }
+        "foreignKey": { "nullable": true, "type": "string" },
+        "allowNull": { "nullable": true, "type": "boolean" }
       }
     },
     "dataType": {

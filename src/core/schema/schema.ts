@@ -84,6 +84,7 @@ export function emptyAssociation(
     targetModelId,
     foreignKey: null,
     alias: null,
+    allowNull: null,
   }
 }
 

@@ -202,6 +202,7 @@ function fromV1Association(association: AssociationV1): Association {
     alias: association.alias ?? null,
     foreignKey: association.foreignKey ?? null,
     type: fromV1AssociationType(association.type),
+    allowNull: association.allowNull ?? null,
   }
 }
 

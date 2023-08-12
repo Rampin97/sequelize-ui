@@ -34,6 +34,7 @@ const category: Model = {
       sourceModelId: Id.Category,
       targetModelId: Id.Category,
       type: belongsToType(),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -42,6 +43,7 @@ const category: Model = {
       sourceModelId: Id.Category,
       targetModelId: Id.Category,
       type: hasManyType(),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -50,6 +52,7 @@ const category: Model = {
       sourceModelId: Id.Category,
       targetModelId: Id.PostCategory,
       type: hasManyType(),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -58,6 +61,7 @@ const category: Model = {
       sourceModelId: Id.Category,
       targetModelId: Id.Post,
       type: manyToManyModelType(Id.PostCategory),
+      allowNull: false,
     },
   ],
 }
@@ -76,6 +80,7 @@ const post: Model = {
       sourceModelId: Id.Post,
       targetModelId: Id.Post,
       type: belongsToType(),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -84,6 +89,7 @@ const post: Model = {
       sourceModelId: Id.Post,
       targetModelId: Id.Post,
       type: hasManyType(),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -92,6 +98,7 @@ const post: Model = {
       sourceModelId: Id.Post,
       targetModelId: Id.PostCategory,
       type: hasManyType(),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -100,6 +107,7 @@ const post: Model = {
       sourceModelId: Id.Post,
       targetModelId: Id.Category,
       type: manyToManyModelType(Id.PostCategory),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -108,6 +116,7 @@ const post: Model = {
       sourceModelId: Id.Post,
       targetModelId: Id.PostTag,
       type: hasManyType(),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -116,6 +125,7 @@ const post: Model = {
       sourceModelId: Id.Post,
       targetModelId: Id.Tag,
       type: manyToManyTableType('post_tag', 'tag_id'),
+      allowNull: false,
     },
   ],
 }
@@ -151,6 +161,7 @@ const postCategory: Model = {
       sourceModelId: Id.PostCategory,
       targetModelId: Id.Post,
       type: belongsToType(),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -159,6 +170,7 @@ const postCategory: Model = {
       sourceModelId: Id.PostCategory,
       targetModelId: Id.Category,
       type: belongsToType(),
+      allowNull: false,
     },
   ],
 }
@@ -177,6 +189,7 @@ const postTag: Model = {
       sourceModelId: Id.PostTag,
       targetModelId: Id.Post,
       type: belongsToType(),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -185,6 +198,7 @@ const postTag: Model = {
       sourceModelId: Id.PostTag,
       targetModelId: Id.Tag,
       type: belongsToType(),
+      allowNull: false,
     },
   ],
 }
@@ -203,6 +217,7 @@ const tag: Model = {
       sourceModelId: Id.Tag,
       targetModelId: Id.PostTag,
       type: hasManyType(),
+      allowNull: false,
     },
     {
       id: uniqueId(),
@@ -211,6 +226,7 @@ const tag: Model = {
       sourceModelId: Id.Tag,
       targetModelId: Id.Post,
       type: manyToManyModelType(Id.PostTag),
+      allowNull: false,
     },
   ],
 }
