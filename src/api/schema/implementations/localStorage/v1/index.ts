@@ -54,6 +54,7 @@ export type DataType =
   | DataTypeBigint
   | DataTypeBlob
   | DataTypeBoolean
+  | DataTypeChar
   | DataTypeCitext
   | DataTypeDate
   | DataTypeDateTime
@@ -88,6 +89,11 @@ export interface DataTypeBlob {
 
 export interface DataTypeBoolean {
   type: 'BOOLEAN'
+}
+
+export interface DataTypeChar {
+  type: 'CHAR'
+  length?: number | null
 }
 
 export interface DataTypeCitext {

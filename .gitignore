@@ -21,3 +21,6 @@ npm-debug.log*
 # Istanbul/NYC
 .nyc_output
 /coverage
+
+
+jtd-codegen

@@ -68,6 +68,9 @@ function fromV1DataType(dataType: DataTypeV1): DataType {
     case 'STRING':
       return { ...dataType, length: dataType.length ?? null, type: DataTypeType.String }
 
+    case 'CHAR':
+      return { ...dataType, length: dataType.length ?? null, type: DataTypeType.Char }
+
     case 'TEXT':
       return { ...dataType, type: DataTypeType.Text }
 
@@ -138,6 +141,7 @@ function fromV1DataType(dataType: DataTypeV1): DataType {
 function toV1DataType(dataType: DataType): DataTypeV1 {
   switch (dataType.type) {
     case DataTypeType.String:
+    case DataTypeType.Char:
     case DataTypeType.Text:
     case DataTypeType.CiText:
     case DataTypeType.Integer:

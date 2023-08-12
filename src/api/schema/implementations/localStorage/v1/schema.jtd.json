@@ -147,6 +147,11 @@
           "properties": {},
           "optionalProperties": { "length": { "nullable": true, "type": "uint8" } }
         },
+        "CHAR": {
+          "additionalProperties": true,
+          "properties": {},
+          "optionalProperties": { "length": { "nullable": true, "type": "uint8" } }
+        },
         "TEXT": {
           "additionalProperties": true,
           "properties": {}

@@ -1,5 +1,6 @@
 export type DataType =
   | StringDataType
+  | CharDataType
   | TextDataType
   | CiTextDataType
   | IntegerDataType
@@ -33,6 +34,7 @@ type ArrayOptions = { arrayType: DataType }
 type UuidOptions = { defaultVersion: UuidType | null }
 
 export type StringDataType = DataTypeBase<DataTypeType.String> & StringOptions
+export type CharDataType = DataTypeBase<DataTypeType.Char> & StringOptions
 export type TextDataType = DataTypeBase<DataTypeType.Text>
 export type CiTextDataType = DataTypeBase<DataTypeType.CiText>
 export type IntegerDataType = DataTypeBase<DataTypeType.Integer> & IntegerOptions
@@ -55,6 +57,7 @@ export type UuidDataType = DataTypeBase<DataTypeType.Uuid> & UuidOptions
 
 export enum DataTypeType {
   String = 'STRING',
+  Char = 'CHAR',
   Text = 'TEXT',
   CiText = 'CITEXT',
   Integer = 'INTEGER',
@@ -89,6 +92,8 @@ export function displayDataTypeType(type: DataTypeType): string {
   switch (type) {
     case DataTypeType.String:
       return 'String'
+    case DataTypeType.Char:
+      return 'Char'
     case DataTypeType.Text:
       return 'Text'
     case DataTypeType.CiText:
@@ -156,6 +161,7 @@ function displayDataTypeOptions(dataType: DataType): string {
 export function resetType(dataType: DataType): DataType {
   switch (dataType.type) {
     case DataTypeType.String:
+    case DataTypeType.Char:
     case DataTypeType.Text:
     case DataTypeType.CiText:
     case DataTypeType.Float:
@@ -189,7 +195,7 @@ export function resetType(dataType: DataType): DataType {
 export type StringType = StringDataType
 
 export function isStringType(dataType: DataType): dataType is StringType {
-  return [DataTypeType.String].includes(dataType.type)
+  return [DataTypeType.String, DataTypeType.Char].includes(dataType.type)
 }
 
 export type DateTimeTypes = DateTimeDataType | DateDataType | TimeDataType
@@ -253,6 +259,10 @@ const defaultUuidOptions: UuidOptions = { defaultVersion: null }
 
 export function stringDataType(opts: Partial<StringOptions> = {}): StringDataType {
   return { type: DataTypeType.String, ...defaultStringOptions, ...opts }
+}
+
+export function charDataType(opts: Partial<StringOptions> = {}): CharDataType {
+  return { type: DataTypeType.Char, ...defaultStringOptions, ...opts }
 }
 
 export function textDataType(): TextDataType {
@@ -335,6 +345,8 @@ export function dataTypeFromDataTypeType(type: DataTypeType): DataType {
   switch (type) {
     case DataTypeType.String:
       return stringDataType()
+    case DataTypeType.Char:
+      return charDataType()
     case DataTypeType.Text:
       return textDataType()
     case DataTypeType.CiText:

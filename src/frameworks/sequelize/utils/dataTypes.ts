@@ -17,6 +17,7 @@ import {
 export function dataTypeToTypeScript(dataType: DataType): string {
   switch (dataType.type) {
     case DataTypeType.String:
+    case DataTypeType.Char:
     case DataTypeType.Text:
     case DataTypeType.CiText:
     case DataTypeType.Uuid:
@@ -84,6 +85,7 @@ function displayBaseDataType(dataType: DataType): string {
 
 enum SequelizeDataType {
   String = 'STRING',
+  Char = 'CHAR',
   Text = 'TEXT',
   CiText = 'CITEXT',
   Integer = 'INTEGER',
@@ -109,6 +111,8 @@ function dataTypeToSequelize(dataType: DataType): SequelizeDataType {
   switch (dataType.type) {
     case DataTypeType.String:
       return SequelizeDataType.String
+    case DataTypeType.Char:
+      return SequelizeDataType.Char
     case DataTypeType.Text:
       return SequelizeDataType.Text
     case DataTypeType.CiText:
